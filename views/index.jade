@@ -9,12 +9,13 @@ html(data-ng-app="book")
             img.logo(src="/img/logo.png")
             ul.menu
                 li.menu-item.active
-                    a Menu Item
+                    a(href="/") Übersicht
                     ul.submenu
                         li.menu-item.active
                             a(href="/form") [+ New Book]
                 li.menu-item
-                    a Menu Item
+                    a
+                        input(type="search", ng-model="search")
                     ul.submenu
                         li.menu-item
                             a Sub Menu Item

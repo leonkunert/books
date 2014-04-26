@@ -1,4 +1,4 @@
-.book(ng-class="bookClass", data-ng-repeat="book in books")
-    {{book.titel}}
-    {{book.illustrator}}
-    {{book._id}}
+.book.blue(ng-class="bookClass", data-ng-repeat="book in books | filter: search")
+    p.titel {{book.titel}}
+    p.illustrator {{book.illustrator}}
+    p.text {{book.text}}

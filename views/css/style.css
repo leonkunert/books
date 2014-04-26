@@ -1,9 +1,67 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url(/fonts/raleway_100.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(/fonts/raleway_200.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(/fonts/raleway_300.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(/fonts/raleway_400.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(/fonts/raleway_500.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(/fonts/raleway_600.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(/fonts/raleway_700.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url(/fonts/raleway_800.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Raleway Heavy'), local('Raleway-Heavy'), url(/fonts/raleway_900.woff) format('woff');
+}
+
 html,
 body {
-    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    color: #333;
     background-color: #ECC47D;
     height: 100%;
 }
+
+/********** Sidebar Menu **********/
 
 .sidebar {
     background-color: #5C5C5A;
@@ -16,11 +74,6 @@ body {
 
 .logo {
     width: 320px;
-}
-
-.content {
-    margin-left: 320px;
-    padding: 5px;
 }
 
 ul.menu {
@@ -64,13 +117,52 @@ li.menu-item.active a {
     background-color: #ECC47D;
 }
 
-div.book {
+/********** Content **********/
+
+.content {
+    margin-left: 320px;
+    padding: 5px;
+}
+
+/********** Bücher **********/
+
+.book {
     width: 225px;
     height: 339px;
     box-shadow: 2px 3px 5px #000;
     float: left;
-    margin: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 7px;
+    overflow: hidden;
 }
+
+.book p.titel {
+    font-size: 23px;
+    text-align: center;
+}
+
+.book p.illustrator:before {
+    content: 'Illustrator: \A    ';
+    white-space: pre;
+    font-size: 0.8em;
+}
+
+.book p.illustrator {
+    font-size: 18px;
+}
+
+.book p.text:before {
+    content: 'Text: \A    ';
+    white-space: pre;
+    font-size: 0.8em;
+}
+
+.book p.text {
+    font-size: 18px;
+}
+
+/********** Bücher Farben **********/
 
 .pink {
     background-color: #F09B9C;
