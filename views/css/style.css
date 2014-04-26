@@ -1,0 +1,96 @@
+html,
+body {
+    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+
+    background-color: #ECC47D;
+
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #5C5C5A;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+}
+
+.content {
+    margin-left: 320px;
+    padding: 5px;
+}
+
+ul.menu {
+    float: right;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+li.menu-item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+ul.menu ul.submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+li.menu-item a {
+    display: block;
+    padding: 16px 0 16px 5px;
+    background-color: #484843;
+    margin-bottom: 3px;
+    width: 280px;
+}
+
+ul.submenu li.menu-item a {
+    margin-left: 30px;
+    width: 250px;
+}
+
+li.menu-item.active a {
+    background-color: #ECC47D;
+}
+
+div.book {
+    width: 225px;
+    height: 339px;
+    box-shadow: 2px 3px 5px #000;
+    float: left;
+    margin: 20px;
+}
+
+.pink {
+    background-color: #F09B9C;
+}
+
+.red {
+    background-color: #DD5656;
+}
+
+.blue {
+    background-color: #3DA9C8;
+}
+
+.dark-blue {
+    background-color: #354D58;
+}
+
+.green {
+    background-color: #4AB19F;
+}
+
+.light-green {
+    background-color: #C2E8B6;
+}
