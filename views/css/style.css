@@ -1,20 +1,21 @@
 html,
 body {
     font-family: 'Helvetica', Helvetica, Arial, sans-serif;
-
     background-color: #ECC47D;
-
     height: 100%;
 }
 
 .sidebar {
     background-color: #5C5C5A;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 320px;
     height: 100%;
+}
+
+.logo {
+    width: 320px;
 }
 
 .content {

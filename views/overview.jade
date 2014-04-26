@@ -1,17 +1,4 @@
-.book.red
-.book.pink
-.book.blue
-.book.dark-blue
-.book.green
-.book.light-green
-.book.red
-.book.pink
-.book.blue
-.book.dark-blue
-.book.green
-.book.light-green
-.book.red
-.book.pink
-.book.blue
-.book.dark-blue
-.book.green
+.book(ng-class="bookClass", data-ng-repeat="book in books")
+    {{book.titel}}
+    {{book.illustrator}}
+    {{book._id}}
