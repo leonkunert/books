@@ -9,11 +9,11 @@ angular.module('book.controllers', [])
         });
 })
 
-.controller('addCtrl', function($scope, bookFactory){
+.controller('addCtrl', function($scope, $location, bookFactory){
     $scope.save = function () {
         bookFactory.addBook($scope.book)
             .success(function (data) {
-                console.log(data);
+                $location.path('/');
             });
     }
 })
