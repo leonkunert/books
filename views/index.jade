@@ -4,6 +4,8 @@ html(data-ng-app="book")
         title= pageTitle
         link(href="/css/normalize.css", rel="stylesheet", type="text/css")
         link(href="/css/style.css", rel="stylesheet", type="text/css")
+        link(href="/css/kendo.css", rel="stylesheet", type="text/css")
+        link(href="/css/kendo.default.css", rel="stylesheet", type="text/css")
     body
         .sidebar
             img.logo(src="/img/logo.png")
@@ -26,7 +28,10 @@ html(data-ng-app="book")
         .content
             .view(data-ng-view="")
 
+        script(src="/js/jquery.js")
         script(src="/js/angular.js")
+        script(src="/js/kendo.js")
+        script(src="/js/angular-kendo.js")
         script(src="/js/angular-route.js")
         script(src="/js/controllers.js")
         script(src="/js/factories.js")

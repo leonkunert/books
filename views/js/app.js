@@ -1,6 +1,7 @@
 'use strict';
 // Declare app level module which depends on and services
 angular.module('book', [
+    'kendo.directives',
     'book.controllers',
     'book.factories',
     'ngRoute'
