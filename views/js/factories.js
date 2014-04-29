@@ -14,7 +14,11 @@ angular.module('book.factories', [])
     };
 
     factory.addBook = function (data) {
-        return $http.post('/v0/book/create', data);
+        return $http.post('/v0/book', data);
+    }
+
+    factory.deleteBook = function (data) {
+        return $http.post('/v0/book/'+bookId, data);
     }
 
     return factory;

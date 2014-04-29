@@ -11,15 +11,15 @@ angular.module('book.controllers', [])
 
 .controller('addCtrl', function($scope, $location, bookFactory) {
     $scope.save = function () {
+        console.log($scope);
         bookFactory.addBook($scope.book)
             .success(function (data) {
-                $location.path('/');
+                //$location.path('/');
             });
-    }
-})
-
-.controller('testCtrl', function ($scope) {
-
+    };
+    $scope.change = function (e) {
+        console.log(e);
+    };
 })
 
 .controller('editCtrl', function($scope, bookFactory, $routeParams) {

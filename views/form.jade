@@ -8,9 +8,8 @@ form
     input(type="text", ng-model="book.druckdatum", name="druckdatum")
     input(type="text", ng-model="book.auflage", name="auflage")
     input(type="text", ng-model="book.typ", name="typ")
-    select(kendo-multi-select="")
+    select(kendo-multi-select="", multiple="multiple", ng-model="book.tags", k-on-change="change(kendoEvent)")
         option(value="sdh") fdjfskdj
         option(value="sdh") fdjfskdj
         option(value="sdh") fdjfskdj
-    select(kendo-drop-down-list="", k-option-label="'Select A Thing'", k-data-text-field="'name'", k-data-value-field="'id'", k-data-source="things")
     input(ng-click="save()", type="submit")

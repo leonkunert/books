@@ -2,6 +2,7 @@ var mongoose = require('./mongo.js');
 
 var book = mongoose.model('book',
     {
+        type        : String,
         titel       : String,
         regal       : String,
         nr          : String,

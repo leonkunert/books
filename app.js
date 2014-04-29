@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var book = require('./book.js');
+var tag = require('./tag.js');
 
 app.engine('jade', require('jade').__express);
 
@@ -24,28 +25,63 @@ app.get('/partials/:name', function (req, res) {
  ** API **
  */
 
-app.get('/v0/book', function (req, res) {
-    book.find(req.query, function (err, result) {
-        res.json(result);
-    });
-});
-
-app.get('/v0/book/:bookId', function (req, res) {
+app.route('/v0/book/:bookId')
+.get(function (req, res) {
     book.findOne({_id:req.params.bookId}, function (err, result) {
         res.json(result);
     });
+})
+
+.put(function (req, res) {
+    book.findOneAndUpdate({_id:req.body._id}, req.body, function (err, result) {
+        res.json(result)
+    });
+})
+
+.delete(function (req, res) {
+    book.findeOneAndRemove({_id:req.body._id}, function (err, result) {
+        res.json(result);
+    });
 });
 
-app.post('/v0/book/create', function (req, res) {
+app.route('/v0/book')
+.get(function (req, res) {
+    book.find(req.query, function (err, result) {
+        res.json(result);
+    });
+})
+
+.post(function (req, res) {
     var _book = new book(req.body);
+    _book.type = 'book';
     _book.save(function (err, result) {
         res.json(result);
     });
 });
 
-app.put('/v0/book/update', function (req, res) {
-    book.findOneAndUpdate({_id:req.body._id}, req.body, function (err, result) {
-        res.json(result)
+app.route('/v0/tags')
+.get(function (req, res) {
+    book.aggregate([
+        {
+            $unwind:"$tags"
+        },
+        {
+            $group : {
+                _id: null,
+                tgs: { $push: "$tags" }
+            }
+        },
+        {
+            $project: {
+                _id: 0,
+                tags: "$tgs"
+            }
+        }
+    ])
+    .exec(function (err, result) {
+        console.log(err)
+        console.log(result)
+        res.json(result);
     });
 });
 
