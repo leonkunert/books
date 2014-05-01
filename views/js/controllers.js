@@ -11,10 +11,9 @@ angular.module('book.controllers', [])
 
 .controller('addCtrl', function($scope, $location, bookFactory) {
     $scope.save = function () {
-        console.log($scope);
         bookFactory.addBook($scope.book)
             .success(function (data) {
-                //$location.path('/');
+                $location.path('/');
             });
     };
     $scope.change = function (e) {
@@ -22,9 +21,15 @@ angular.module('book.controllers', [])
     };
 })
 
-.controller('editCtrl', function($scope, bookFactory, $routeParams) {
-    bookFactory.getBook($routeParams.bookId)
+.controller('editCtrl', function($scope, bookFactory, $location, $routeParams) {
+    bookFactory.getBook($routeParams._id)
         .success(function (data) {
             $scope.book = data;
         });
+    $scope.save = function () {
+        bookFactory.updateBook($scope.book)
+            .success(function (data) {
+                $location.path('/');
+            });
+    };
 });

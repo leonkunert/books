@@ -13,7 +13,7 @@ angular.module('book', [
     $routeProvider
         .when('/', {templateUrl: '/partials/overview', controller: 'overviewCtrl'})
         .when('/form', {templateUrl: '/partials/form', controller: 'addCtrl'})
-        .when('/edit/:bookId', {templateUrl: '/partials/form', controller: 'editCtrl'})
+        .when('/edit/:_id', {templateUrl: '/partials/form', controller: 'editCtrl'})
         // If none of the routes match
-        .otherwise({redirectTo: '/partials/overview'});
+        .otherwise({redirectTo: '/'});
 });

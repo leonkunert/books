@@ -31,13 +31,11 @@ app.route('/v0/book/:bookId')
         res.json(result);
     });
 })
-
 .put(function (req, res) {
     book.findOneAndUpdate({_id:req.body._id}, req.body, function (err, result) {
         res.json(result)
     });
 })
-
 .delete(function (req, res) {
     book.findeOneAndRemove({_id:req.body._id}, function (err, result) {
         res.json(result);
@@ -50,7 +48,6 @@ app.route('/v0/book')
         res.json(result);
     });
 })
-
 .post(function (req, res) {
     var _book = new book(req.body);
     _book.type = 'book';
@@ -81,6 +78,13 @@ app.route('/v0/tags')
     .exec(function (err, result) {
         console.log(err)
         console.log(result)
+        res.json(result);
+    });
+})
+.post(function (req, res) {
+    var _tag = new tag(req.body);
+    _tag.type = 'tag';
+    _tag.save(function (err, result) {
         res.json(result);
     });
 });
