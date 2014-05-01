@@ -7,6 +7,10 @@ angular.module('book.controllers', [])
         .success(function (data) {
             $scope.books = data;
         });
+    $scope.test = function () {
+        console.log('message');
+        return true;
+    };
 })
 
 .controller('addCtrl', function($scope, $location, bookFactory) {
