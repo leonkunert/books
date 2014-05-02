@@ -10,6 +10,11 @@ angular.module('book.controllers', [])
 })
 
 .controller('addCtrl', function($scope, $location, bookFactory, tagFactory) {
+    tagFactory.getTags()
+        .success(function (data) {
+            console.log(data[0].tags);
+            $scope.tags = data[0].tags;
+        });
     $scope.saveBook = function () {
         bookFactory.addBook($scope.book)
             .success(function (data) {
@@ -19,6 +24,7 @@ angular.module('book.controllers', [])
     $scope.saveTag = function () {
         tagFactory.addTag($scope.tag)
             .success(function (data) {
+                $scope.tags.push($scope.tag.titel);
                 $scope.tag = {};
             });
     };
@@ -27,14 +33,20 @@ angular.module('book.controllers', [])
     };
 })
 
-.controller('editCtrl', function($scope, bookFactory, $location, $routeParams) {
+.controller('editCtrl', function($scope, $location, $routeParams, bookFactory, tagFactory) {
     bookFactory.getBook($routeParams._id)
         .success(function (data) {
             $scope.book = data;
         });
+    tagFactory.getTags()
+        .success(function (data) {
+            console.log(data[0].tags);
+            $scope.tags = data[0].tags;
+        });
     $scope.saveTag = function () {
         tagFactory.addTag($scope.tag)
             .success(function (data) {
+                $scope.tags.push($scope.tag.titel);
                 $scope.tag = {};
             });
     };

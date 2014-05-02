@@ -66,7 +66,6 @@ app.route('/v0/tags')
             }
         }
     ]).exec(function (err, result) {
-        console.log(result);
         res.json(result);
     });
 })
