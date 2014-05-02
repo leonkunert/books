@@ -37,7 +37,7 @@ app.route('/v0/book/:bookId')
     });
 })
 .delete(function (req, res) {
-    book.findeOneAndRemove({_id:req.body._id}, function (err, result) {
+    book.findOneAndRemove({_id:req.body._id}, function (err, result) {
         res.json(result);
     });
 });
@@ -58,26 +58,15 @@ app.route('/v0/book')
 
 app.route('/v0/tags')
 .get(function (req, res) {
-    book.aggregate([
-        {
-            $unwind:"$tags"
-        },
+    tag.aggregate([
         {
             $group : {
-                _id: null,
-                tgs: { $push: "$tags" }
-            }
-        },
-        {
-            $project: {
-                _id: 0,
-                tags: "$tgs"
+                _id: '$type',
+                tags: { $addToSet: "$titel" }
             }
         }
-    ])
-    .exec(function (err, result) {
-        console.log(err)
-        console.log(result)
+    ]).exec(function (err, result) {
+        console.log(result);
         res.json(result);
     });
 })

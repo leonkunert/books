@@ -7,17 +7,19 @@ angular.module('book.controllers', [])
         .success(function (data) {
             $scope.books = data;
         });
-    $scope.test = function () {
-        console.log('message');
-        return true;
-    };
 })
 
-.controller('addCtrl', function($scope, $location, bookFactory) {
-    $scope.save = function () {
+.controller('addCtrl', function($scope, $location, bookFactory, tagFactory) {
+    $scope.saveBook = function () {
         bookFactory.addBook($scope.book)
             .success(function (data) {
                 $location.path('/');
+            });
+    };
+    $scope.saveTag = function () {
+        tagFactory.addTag($scope.tag)
+            .success(function (data) {
+                $scope.tag = {};
             });
     };
     $scope.change = function (e) {
@@ -30,7 +32,13 @@ angular.module('book.controllers', [])
         .success(function (data) {
             $scope.book = data;
         });
-    $scope.save = function () {
+    $scope.saveTag = function () {
+        tagFactory.addTag($scope.tag)
+            .success(function (data) {
+                $scope.tag = {};
+            });
+    };
+    $scope.saveBook = function () {
         bookFactory.updateBook($scope.book)
             .success(function (data) {
                 $location.path('/');
