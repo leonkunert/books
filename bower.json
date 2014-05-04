@@ -1,0 +1,23 @@
+{
+  "name": "Books",
+  "version": "0.0.1",
+  "authors": [
+    "Leon Kunert <info@leonkunert.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-animate": "latest",
+    "bootstrap-sass-twbs": "latest",
+    "bootstrap": "latest"
+  }
+}

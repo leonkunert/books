@@ -11,12 +11,9 @@ form
     input(type="text", ng-model="tag.titel", name="tag", ng-blur="saveTag()")
     select(
         kendo-multi-select="",
-        multiple="multiple",
-        ng-model="book.tags",
         k-data-source="tags",
-        k-on-change="change(kendoEvent)")
-
-        option(value="sdh") fdjfskdj
-        option(value="sdh") fdjfskdj
-        option(value="sdh") fdjfskdj
+        k-option-label="'Select A Thing'",
+        k-data-text-field="'titel'",
+        k-data-value-field="'titel'",
+        ng-model="book.tags")
     input(ng-click="saveBook()", type="submit")

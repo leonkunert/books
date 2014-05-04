@@ -28,10 +28,14 @@ app.get('/partials/:name', function (req, res) {
 app.route('/v0/book/:bookId')
 .get(function (req, res) {
     book.findOne({_id:req.params.bookId}, function (err, result) {
+        console.log('Search Book');
+        console.log(result);
         res.json(result);
     });
 })
 .put(function (req, res) {
+    console.log('update book');
+    console.log(req.body);
     book.findOneAndUpdate({_id:req.body._id}, req.body, function (err, result) {
         res.json(result)
     });
@@ -58,14 +62,7 @@ app.route('/v0/book')
 
 app.route('/v0/tags')
 .get(function (req, res) {
-    tag.aggregate([
-        {
-            $group : {
-                _id: '$type',
-                tags: { $addToSet: "$titel" }
-            }
-        }
-    ]).exec(function (err, result) {
+    tag.find({}, function (err, result) {
         res.json(result);
     });
 })
