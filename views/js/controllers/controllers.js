@@ -13,8 +13,8 @@ angular.module('book.controllers', [])
     $scope.tag = {titel:''};
     tagFactory.getTags()
         .success(function (data) {
-            console.log(data[0].tags);
-            $scope.tags = data[0].tags;
+            console.log(data);
+            $scope.tags = data;
         });
     $scope.saveBook = function () {
         bookFactory.addBook($scope.book)
@@ -42,7 +42,6 @@ angular.module('book.controllers', [])
         });
     tagFactory.getTags()
         .success(function (data) {
-            console.log(data);
             $scope.tags = data;
         });
     $scope.saveTag = function () {

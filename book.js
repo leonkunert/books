@@ -11,7 +11,8 @@ var book = mongoose.model('book',
         druckdatum  : String,
         auflage     : String,
         typ         : String,
-        tags        : []
+        tags        : Array,
+        created_at  : Date
     }
 );
 
