@@ -11,11 +11,20 @@ angular.module('book.controllers', [])
 
 .controller('addCtrl', function($scope, $location, bookFactory, tagFactory) {
     $scope.tag = {titel:''};
-    tagFactory.getTags()
-        .success(function (data) {
-            console.log(data);
-            $scope.tags = data;
-        });
+    $scope.multiOptions = {
+        placeholder: "Tags auswählen...",
+        dataTextField: "titel",
+        dataValueField: "titel",
+        autoBind: false,
+        dataSource: {
+            type: "json",
+            transport: {
+                read: {
+                    url: "/v0/tags",
+                }
+            }
+        }
+    };
     $scope.saveBook = function () {
         bookFactory.addBook($scope.book)
             .success(function (data) {
@@ -40,10 +49,20 @@ angular.module('book.controllers', [])
             console.log(data);
             $scope.book = data;
         });
-    tagFactory.getTags()
-        .success(function (data) {
-            $scope.tags = data;
-        });
+    $scope.multiOptions = {
+        placeholder: "Tags auswählen...",
+        dataTextField: "titel",
+        dataValueField: "titel",
+        autoBind: false,
+        dataSource: {
+            type: "json",
+            transport: {
+                read: {
+                    url: "/v0/tags",
+                }
+            }
+        }
+    };
     $scope.saveTag = function () {
         if ($scope.tag.titel != '') {
             tagFactory.addTag($scope.tag)

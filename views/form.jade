@@ -9,10 +9,5 @@ form
     input(type="text", ng-model="book.auflage", name="auflage")
     input(type="text", ng-model="book.typ", name="typ")
     input(type="text", ng-model="tag.titel", name="tag", ng-blur="saveTag()")
-    select(
-        kendo-multi-select="",
-        k-data-source="tags",
-        k-data-text-field="'titel'",
-        k-data-value-field="'titel'",
-        ng-model="book.tags")
+    select(kendo-multi-select="", k-options="multiOptions", k-ng-model="book.tags")
     input(ng-click="saveBook()", type="submit")
