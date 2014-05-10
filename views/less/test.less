@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Raleway Thin'), local('Raleway-Thin'), url(/fonts/raleway_100.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(/fonts/raleway_200.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Raleway Light'), local('Raleway-Light'), url(/fonts/raleway_300.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), url(/fonts/raleway_400.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Raleway Medium'), local('Raleway-Medium'), url(/fonts/raleway_500.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(/fonts/raleway_600.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Raleway Bold'), local('Raleway-Bold'), url(/fonts/raleway_700.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url(/fonts/raleway_800.woff) format('woff');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Raleway Heavy'), local('Raleway-Heavy'), url(/fonts/raleway_900.woff) format('woff');
+}
+
+html,
+body {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #ECC47D;
+    height: 100%;
+}
+
+/********** Sidebar Menu **********/
+
+.sidebar {
+    background-color: #5C5C5A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+}
+
+.logo {
+    width: 320px;
+}
+
+ul.menu {
+    float: right;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    display: block;
+    ul.submenu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: block;
+        margin-bottom: 20px;
+        li.menu-item a {
+            margin-left: 30px;
+            width: 250px;
+        }
+    }
+}
+
+li.menu-item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    &.active a {
+        background-color: #ECC47D;
+    }
+    a {
+        display: block;
+        padding: 16px 0 16px 5px;
+        background-color: #484843;
+        margin-bottom: 3px;
+        width: 280px;
+    }
+}
+
+/********** Content **********/
+
+.content {
+    margin-left: 320px;
+    padding: 5px;
+}
+
+/********** Bücher **********/
+
+.book {
+    width: 225px;
+    height: 339px;
+    box-shadow: 2px 3px 5px #000;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    padding: 7px;
+    overflow: hidden;
+    .titel {
+        font-size: 23px;
+        text-align: center;
+    }
+    .illustrator {
+        font-size: 18px;
+        &:before {
+            content: 'Illustrator: \A    ';
+            white-space: pre;
+            font-size: 0.8em;
+        }
+    }
+    .book .text {
+        font-size: 18px;
+        &:before {
+            content: 'Text: \A    ';
+            white-space: pre;
+            font-size: 0.8em;
+        }
+    }
+}
+
+/********** Bücher Farben **********/
+
+@pink       : #F09B9C;
+@red        : #DD5656;
+@blue       : #3DA9C8;
+@dark-blue  : #354D58;
+@green      : #4AB19F;
+@light-green: #C2E8B6;
+
+.pink {
+    background-color: @pink;
+}
+
+.red {
+    background-color: @red;
+}
+
+.blue {
+    background-color: @blue;
+}
+
+.dark-blue {
+    background-color: @dark-blue;
+}
+
+.green {
+    background-color: @green;
+}
+
+.light-green {
+    background-color: @light-green;
+}

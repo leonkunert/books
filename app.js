@@ -37,7 +37,7 @@ app.route('/v0/book/:bookId')
     console.log('update book');
     console.log(req.body);
     book.findOneAndUpdate({_id:req.body._id}, req.body, function (err, result) {
-        res.json(result)
+        res.json(result);
     });
 })
 .delete(function (req, res) {

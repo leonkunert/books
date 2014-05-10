@@ -32,7 +32,7 @@ angular.module('book.controllers', [])
             });
     };
     $scope.saveTag = function () {
-        if ($scope.tag.titel != '') {
+        if ($scope.tag.titel !== '') {
             tagFactory.addTag($scope.tag)
                 .success(function (data) {
                     $scope.tags.push($scope.tag.titel);
@@ -64,7 +64,7 @@ angular.module('book.controllers', [])
         }
     };
     $scope.saveTag = function () {
-        if ($scope.tag.titel != '') {
+        if ($scope.tag.titel !== '') {
             tagFactory.addTag($scope.tag)
                 .success(function (data) {
                     $scope.tags.push($scope.tag.titel);
