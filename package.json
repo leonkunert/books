@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "latest",
     "mongoose": "latest",
+    "body-parser": "latest",
     "jade": "latest"
   },
   "devDependencies": {

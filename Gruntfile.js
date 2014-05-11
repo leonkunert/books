@@ -38,12 +38,19 @@ module.exports = function(grunt) {
 
         jshint: {
             options: {
+                globalstrict: true,
                 curly: true,
                 eqeqeq: true,
                 eqnull: true,
                 browser: true,
                 globals: {
-                    jQuery: true
+                    jQuery: true,
+                    require: false,
+                    module: false,
+                    console: false,
+                    __dirname: false,
+                    process: false,
+                    exports: false
                 },
                 ignores: ['views/js/libs/*.js']
             },

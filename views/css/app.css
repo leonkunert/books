@@ -123,22 +123,22 @@ li.menu-item a {
   padding: 7px;
   overflow: hidden;
 }
-.book p.titel {
+.book .titel {
   font-size: 23px;
   text-align: center;
 }
-.book p.illustrator {
+.book .illustrator {
   font-size: 18px;
 }
-.book p.illustrator:before {
+.book .illustrator:before {
   content: 'Illustrator: \A    ';
   white-space: pre;
   font-size: 0.8em;
 }
-.book .book p.text {
+.book .book .text {
   font-size: 18px;
 }
-.book .book p.text:before {
+.book .book .text:before {
   content: 'Text: \A    ';
   white-space: pre;
   font-size: 0.8em;
